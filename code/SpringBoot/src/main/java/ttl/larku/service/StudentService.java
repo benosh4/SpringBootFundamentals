@@ -1,5 +1,6 @@
 package ttl.larku.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import ttl.larku.dao.BaseDAO;
@@ -19,7 +20,7 @@ public class StudentService {
 
     private ApplicationEventPublisher publisher;
 
-//    @Autowired
+    @Autowired
     private ServiceThatWeDontOwn ctwdo;
 
     //Autowiring happening here
