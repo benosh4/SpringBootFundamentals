@@ -1,20 +1,29 @@
 package ttl.larku.service;
 
+import ttl.larku.dao.DaoFactory;
+import ttl.larku.dao.StudentDAO;
 import ttl.larku.dao.inmemory.InMemoryStudentDAO;
+import ttl.larku.dao.jpa.JpaStudentDAO;
 import ttl.larku.domain.Student;
 import ttl.larku.domain.Student.Status;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class StudentService {
 
     List<String> stuff = new ArrayList<>();
 
-    private InMemoryStudentDAO studentDAO;
+    private StudentDAO studentDAO;
+//    private InMemoryStudentDAO studentDAO;
+//    private JpaStudentDAO studentDAO;
 
     public StudentService() {
-        studentDAO = new InMemoryStudentDAO();
+        studentDAO = DaoFactory.studentDAO();
+
+//        studentDAO = new InMemoryStudentDAO();
+//        studentDAO = new JpaStudentDAO();
     }
 
     public Student createStudent(String name, String phoneNumber, Status status) {
@@ -53,7 +62,9 @@ public class StudentService {
         return studentDAO.getAll();
     }
 
-    public InMemoryStudentDAO getStudentDAO() {
+    //    public InMemoryStudentDAO getStudentDAO() {
+//    public JpaStudentDAO getStudentDAO() {
+    public StudentDAO getStudentDAO() {
         return studentDAO;
     }
 
