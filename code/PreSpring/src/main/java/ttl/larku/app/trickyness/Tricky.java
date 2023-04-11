@@ -66,7 +66,7 @@ class Circus
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
-        context.getEnvironment().setActiveProfiles("two");
+//        context.getEnvironment().setActiveProfiles("two");
         context.scan("ttl.larku.app.trickyness");
         context.refresh();
 
