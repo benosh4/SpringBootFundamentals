@@ -47,10 +47,10 @@ public class CourseService {
         return false;
     }
 
-    public Course getCourseByCode(String code) {
-        List<Course> courses = courseDAO.findBy(c -> c.getCode().equals(code));
-        return courses.size() > 0 ? courses.get(0) : null;
-    }
+//    public Course getCourseByCode(String code) {
+//        List<Course> courses = courseDAO.findBy(c -> c.getCode().equals(code));
+//        return courses.size() > 0 ? courses.get(0) : null;
+//    }
 
     public Course getCourse(int id) {
         return courseDAO.get(id);

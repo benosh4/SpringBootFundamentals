@@ -47,11 +47,12 @@ public class StudentServiceUnitTest {
     private LocalDate dob1 = LocalDate.of(1988, 10, 7);
     private LocalDate dob2 = LocalDate.of(2010, 10, 7);
 
+    @Mock
+    private JPAStudentDAO studentDAO;
+
     @InjectMocks
     private StudentService studentService;
 
-    @Mock
-    private JPAStudentDAO studentDAO;
 
 
     @BeforeEach
@@ -67,7 +68,9 @@ public class StudentServiceUnitTest {
 
         Student newStudent = studentService.createStudent(name1, phoneNumber1, dob1, Status.FULL_TIME);
 
-        Mockito.verify(studentDAO, atMost(1)).create(s);
+        //Mockito.verify(studentDAO, atMost(1)).create(s);
+
+        Mockito.verify(studentDAO).create(s);
     }
 
     @Test
