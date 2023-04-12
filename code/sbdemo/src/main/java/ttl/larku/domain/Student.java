@@ -32,7 +32,7 @@ public class Student {
 
     private Status status = Status.FULL_TIME;
 
-    private List<ScheduledClass> classes;
+//    private List<ScheduledClass> classes;
 
     private static int nextId = 0;
 
@@ -59,7 +59,7 @@ public class Student {
         this.status = status;
         this.phoneNumber = phoneNumber;
         this.dob = dob;
-        this.classes = classes;
+//        this.classes = classes;
     }
 
     public int getId() {
@@ -109,22 +109,22 @@ public class Student {
     }
 
 
-    public List<ScheduledClass> getClasses() {
-        return classes;
-    }
-
-    public void setClasses(List<ScheduledClass> classes) {
-        this.classes = classes;
-    }
-
-
-    public void addClass(ScheduledClass sClass) {
-        classes.add(sClass);
-    }
-
-    public void dropClass(ScheduledClass sClass) {
-        classes.remove(sClass);
-    }
+//    public List<ScheduledClass> getClasses() {
+//        return classes;
+//    }
+//
+//    public void setClasses(List<ScheduledClass> classes) {
+//        this.classes = classes;
+//    }
+//
+//
+//    public void addClass(ScheduledClass sClass) {
+//        classes.add(sClass);
+//    }
+//
+//    public void dropClass(ScheduledClass sClass) {
+//        classes.remove(sClass);
+//    }
 
     @Override
     public boolean equals(Object o) {
@@ -147,7 +147,7 @@ public class Student {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", dob=" + dob +
                 ", status=" + status +
-                ", classes=" + classes +
+//                ", classes=" + classes +
                 '}';
     }
 }

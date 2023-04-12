@@ -18,32 +18,41 @@ import java.util.List;
 @SpringBootApplication
 public class SbdemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SbdemoApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SbdemoApplication.class, args);
+    }
 
-//	@Bean
-	//TODO - why not working??
-//	@Order(1)
-//	public CommandLineRunner runner2() {
-//		return (String ...args) -> System.out.println("Hello from Runner2");
-//	}
+    @Bean
+//	TODO - why not working??
+	@Order(1)
+    public CommandLineRunner runner3() {
+		return (String ...args) -> System.out.println("Hello from Runner3");
+    }
 
 }
 
 @Component
-//@Order(2)
-class MyRunner implements CommandLineRunner
-{
-	@Autowired
-	private StudentService studentService;
+@Order(2)
+class MyRunner2 implements CommandLineRunner {
 
-	@Override
-	public void run(String... args) throws Exception {
-		System.out.println("MyRunner called");
-		List<Student> students = studentService.getAllStudents();
-		for(Student s : students) {
-			System.out.println(s);
-		}
-	}
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println("Hello from otherRunner");
+    }
+}
+
+@Component
+@Order(3)
+class MyRunner implements CommandLineRunner {
+    @Autowired
+    private StudentService studentService;
+
+    @Override
+    public void run(String... args) throws Exception {
+        System.out.println("MyRunner called");
+        List<Student> students = studentService.getAllStudents();
+        for (Student s : students) {
+            System.out.println(s);
+        }
+    }
 }
