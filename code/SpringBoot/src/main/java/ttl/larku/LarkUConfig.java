@@ -38,7 +38,8 @@ public class LarkUConfig {
     @Bean
     @Profile("development")
     public BaseDAO<Student> studentDAO() {
-        return inMemoryStudentDAO();
+        return testDataProducer.studentDAOWithInitData();
+//        return inMemoryStudentDAO();
     }
 
     @Bean(name = "studentDAO")

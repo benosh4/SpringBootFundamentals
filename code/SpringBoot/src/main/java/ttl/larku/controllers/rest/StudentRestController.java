@@ -2,6 +2,7 @@ package ttl.larku.controllers.rest;
 
 import com.ctc.wstx.shaded.msv_core.util.Uri;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -161,7 +162,7 @@ public class StudentRestController {
      */
     @PostMapping
     public ResponseEntity<?> createStudent(@RequestBody @Valid Student s, Errors errors) {
-        validator.validate(s, errors);
+//        validator.validate(s, errors);
         if (errors.hasErrors()) {
             List<String> errmsgs = errors.getFieldErrors().stream()
                     .map(error -> "error:" + error.getField() + ": " + error.getDefaultMessage()

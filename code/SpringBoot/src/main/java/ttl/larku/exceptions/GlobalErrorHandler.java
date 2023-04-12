@@ -40,7 +40,7 @@ public class GlobalErrorHandler {
      * <p>
      * From ResponseEntityExceptionHandler::handleExceptions, there are the
      * exceptions that result from 400 Bad Request status codes.  We are
-     * trapping them a bunch of them in one place, and have specific
+     * trapping a bunch of them here, and have specific
      * functions for others.
      *
      * @param ex
@@ -62,7 +62,7 @@ public class GlobalErrorHandler {
 
     /**
      * Handle validation errors for automatic validation, i.e with the @Valid annotation.
-     * For this to be invoked, you have to have a controller argument of object type
+     * For this to be invoked, you have to have a controller argument
      * to which you have attached the @Valid annotation.
      * Look at the end of StudentRestController for an example, which may be commented out
      * by default.

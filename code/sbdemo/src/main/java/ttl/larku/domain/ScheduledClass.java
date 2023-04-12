@@ -65,12 +65,12 @@ public class ScheduledClass {
         students.add(student);
     }
 
-    public void removeStudent(Student student) {
-        students.remove(student);
-
-        //Do the other side of the relationship
-        student.dropClass(this);
-    }
+//    public void removeStudent(Student student) {
+//        students.remove(student);
+//
+//        //Do the other side of the relationship
+//        student.dropClass(this);
+//    }
 
     public LocalDate getStartDate() {
         return startDate;

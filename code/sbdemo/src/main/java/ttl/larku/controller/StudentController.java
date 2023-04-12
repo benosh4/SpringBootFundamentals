@@ -25,8 +25,16 @@ import java.util.List;
 @RequestMapping("/student")
 public class StudentController {
 
-    @Autowired
+//    @Autowired
     private StudentService studentService;
+
+//    @Autowired
+    private UriCreator uriCreator;
+
+//    public StudentController(StudentService studentService, UriCreator uriCreator) {
+//        this.studentService = studentService;
+//        this.uriCreator = uriCreator;
+//    }
 
     @GetMapping
     @RequestMapping("/hello")
@@ -56,12 +64,13 @@ public class StudentController {
     public ResponseEntity<?> addStudent(@RequestBody Student student) {
         Student newStudent = studentService.createStudent(student);
 
-        URI newResource = ServletUriComponentsBuilder
-                .fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(newStudent.getId())
-                .toUri();
+//        URI newResource = ServletUriComponentsBuilder
+//                .fromCurrentRequest()
+//                .path("/{id}")
+//                .buildAndExpand(newStudent.getId())
+//                .toUri();
 
+        URI newResource = uriCreator.createURI(newStudent.getId());
         return ResponseEntity.created(newResource).build(); //.body(newStudent);
     }
 
